@@ -1,0 +1,15 @@
+{
+  "name": "wasm-dynamic-memory-allocation-ziglang",
+  "module": "./src/index.js",
+  "type": "module",
+  "scripts": {
+    "build-zig": "zig build-exe src/wasm-module.zig -target wasm32-freestanding -OReleaseSafe -mcpu generic+simd128 -fno-entry -rdynamic -femit-bin=wasm/wasm-module.wasm",
+    "test-zig": "zig test src/wasm-module.zig",
+    "test-oneRun": "bun tests/wasm-module-oneRun.test.js",
+    "test": "bun tests/wasm-module.test.js"
+  },
+  "devDependencies": {
+  },
+  "peerDependencies": {
+  }
+}
